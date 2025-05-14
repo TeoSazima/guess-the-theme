@@ -117,7 +117,7 @@ int main()
     // Uvolnění a uzavření
     sqlite3_finalize(stmt);
     sqlite3_close(db);
-    */
+   
 
 
 
