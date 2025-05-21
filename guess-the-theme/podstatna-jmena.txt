@@ -1,0 +1,963 @@
+adam
+adresa
+akrobat
+akumulátor
+alarm  
+alobal  
+ambulance  
+ampule  
+analıza  
+anketa  
+anténa  
+aplaus  
+archiv  
+aréna  
+argument  
+aspirin  
+atlas  
+atlet  
+autoškola  
+avokádo  
+bagr  
+balet  
+balík  
+balón  
+banánovník  
+baret  
+basa  
+baterie  
+bazén  
+bedna  
+bìhání  
+bìecké boty  
+bìky  
+beran  
+beruška  
+beton  
+bezdrátová sluchátka  
+bezpeèí  
+bezpeènostní pás  
+bezvìtøí  
+bicykl  
+bílá hùl  
+biologie  
+biskup  
+bitva  
+blesk  
+bludištì  
+bobule  
+bodlák  
+bohatství  
+bojovník  
+bok  
+bolest  
+bonbon  
+borovice  
+bota  
+botník  
+bourání  
+box  
+bramborová kaše  
+brána  
+brèko  
+brnìní  
+brokolice  
+bro  
+brıle  
+bublifuk  
+budík  
+budova  
+bunda  
+butik  
+byt  
+cédéèko  
+cennost  
+cepín  
+cestování  
+cukrárna  
+cukrovar  
+cvrèek  
+èalouník  
+èas  
+èasová osa  
+èechráèek  
+èepel  
+èesneková pomazánka  
+èerven  
+èervenec  
+èervenı koberec  
+èich  
+èinnost  
+èip  
+èokoládovı dort  
+èteèka knih  
+ètvrtek  
+dámské kolo  
+dárek k narozeninám  
+dech  
+demonstrace  
+denní tisk  
+dìtské høištì  
+dílna  
+dlaba  
+dlouhı rukáv  
+dobrodruná vıprava  
+dobıvání  
+domovní klíè  
+doplnìk  
+dopisní papír  
+dortík  
+dotazník  
+douèování  
+dovádìní  
+dráèek  
+drát  
+døevìná podlaha  
+duch  
+dùl  
+dùm na stromì  
+duše  
+dveøní klika  
+dvojèata  
+dımka  
+dem  
+elektrická zásuvka  
+elektrikáø  
+emailová adresa  
+etiketa  
+euro  
+evoluce  
+fanfára  
+farmaøení  
+fazole na smetanì  
+fén  
+figurína  
+filmovı festival  
+filozofie  
+fotbalové høištì  
+fotografická vıstava  
+fotokniha  
+foukaèka  
+francouzskı chléb  
+froté ruèník  
+fyzikální zákon  
+garáová vrata  
+geometrickı tvar  
+gestikulace  
+gigant  
+glóbus  
+golfová hùl  
+gramatika  
+grilování  
+hasièskı ebøík  
+havárie  
+hebkost  
+hedvábí  
+hektar  
+herní konzole  
+hmyz  
+hodinovı strojek  
+holínky  
+horská dráha  
+hrací automat  
+hrací kostka  
+hraèky  
+hradní vì  
+hranolkovı obìd  
+hrátky ve snìhu  
+hudební skupina  
+humor  
+hustı déš  
+hygienické potøeby  
+hypnotizér  
+ikona  
+improvizace  
+indigo  
+inovace  
+inspirování  
+internetovı obchod  
+inzerát  
+jarní vánek  
+jahodová marmeláda  
+jásot  
+jednoroec  
+jemnost  
+jízdenka  
+jogging  
+jojo  
+kabát  
+kabinka  
+kachlová kamna  
+kadidlo  
+kalhoty  
+kamenná zeï  
+kanál  
+kapka rosy  
+karafa  
+karamelová poleva  
+karta na slevu  
+kasárna  
+katalog  
+kadodenní rutina  
+kbelík vody  
+keø  
+kilo jablek  
+kimono  
+klavírní koncert  
+klíèenka  
+klokan  
+klubovna  
+koèárek pro panenky  
+kód  
+kohoutek s vodou  
+kokosová voda  
+koláèek  
+kolébka  
+kolejní pokoj  
+kolotoè  
+kombajn  
+komiks  
+komunikace  
+konferenèní stolek  
+koníèek  
+kopaná  
+korejská kuchynì  
+kosmetika  
+kostelní vì  
+kotva  
+kouzelnická hùlka  
+kozaèky  
+krajkové šaty  
+krb  
+kriket  
+krocan  
+krokodıl  
+kruhovı objezd  
+kuchyòskı robot  
+kùlna  
+kulièkové pero  
+kurır  
+kutil  
+kvìtinovı vzor  
+kyblík  
+kyselina citronová  
+láhev s vodou  
+lak na nehty  
+lampion  
+lano na šplhání  
+láskyplné gesto  
+lavice v parku  
+lazura  
+ledová káva  
+ledová tøíš  
+ledová voda  
+lékárenská váha  
+létající balón  
+levandule  
+lezecká stìna  
+lis na citrusy  
+listopadovı déš  
+lízátko s pøíchutí  
+lokomotivní píšala  
+loutkové divadlo  
+loue  
+lucerna  
+lup  
+luxusní hotel  
+lyaøské støedisko  
+maminka s dítìtem  
+manuál  
+mapovı atlas  
+maratónskı bìh  
+masérskı salon  
+maturitní ples  
+mìsíc v úplòku  
+mìstské opevnìní  
+mikroskopická analıza  
+mlha nad øekou  
+mobilní aplikace  
+modrá pastelka  
+moøská sùl  
+mostní oblouk  
+motivaèní øeè  
+motılí køídla  
+mouka hladká  
+mravenèí práce  
+mıdlové bubliny  
+náhodnı kolemjdoucí  
+nájemní smlouva  
+nákladní loï  
+nákupní vozík  
+námoøní bitva  
+napínavı film  
+náøadí v dílnì  
+národní divadlo  
+náramek  
+návod k pouití  
+nedìlní obìd  
+nerezovı døez  
+noèní lampièka  
+nové boty  
+novoroèní pøání  
+obchodní centrum  
+obláèková obloha  
+obraz Mona Lisa  
+obvaz na ránu  
+odìvní návrháø  
+ohnivá koule  
+ojedinìlı pøípad  
+okrasná fontána  
+olejomalba  
+omáèník  
+opakování uèiva  
+opevnìnı hrad  
+oranové listí  
+osvìtlená ulice  
+ozdobná mašle  
+palaèinka s demem  
+palubní deska  
+pampeliškové víno  
+papírové kapesníky  
+parkurovı jezdec  
+partitura  
+pas na cestování  
+pìší zóna  
+pianistova ruka  
+písek na plái  
+plachetnice na obzoru  
+plán mìsta  
+plesová sezóna  
+pneumatika  
+pobøení promenáda  
+pohádka pøed spaním  
+pohranièní strá  
+police na knihy  
+povleèení na postel  
+práce na zahradì  
+prázdná sklenice  
+pøání k narozeninám  
+pøíbìh o rytíøích  
+pøednáška o historii  
+pøeklad knihy  
+pøedpovìï poèasí  
+pøenosnı reproduktor  
+první jarní kvìt  
+pøírodní rezervace  
+pøízvuk ve vìtì  
+pùlmìsíc  
+pytel brambor
+auto  
+balkon  
+baterka  
+bavlna  
+bìky  
+bezpeènost  
+bezvìtøí  
+bicykl  
+bota  
+botník  
+bouda  
+brána  
+bratránek  
+budík  
+bublina  
+budova  
+bunda  
+butik  
+byt  
+cibulák  
+cigareta  
+cirkus  
+cílová èára  
+cukrovar  
+èalounìní  
+èasopis  
+èerstvı chléb  
+èich  
+èinnost  
+èlovìk  
+èokoládovna  
+ètvr  
+dárek  
+deka  
+demokracie  
+deník  
+dílna  
+dítì  
+dladice  
+dobrodruství  
+domov  
+dopravní znaèka  
+dopis  
+dort  
+dotyková obrazovka  
+dovolená  
+drak  
+drogerie  
+døevo  
+duha  
+dùchod  
+dùm  
+dveøe  
+dınì  
+elektrárna  
+elektrickı proud  
+email  
+faktura  
+farma  
+fazole  
+festival  
+film  
+fotografie  
+fotbal  
+fritéza  
+gará  
+gauè  
+geografie  
+golf  
+gramofon  
+hadaè  
+hádanka  
+halušky  
+hasièskı vùz  
+herna  
+hlína  
+hlubina  
+hmyz  
+hodina  
+hory  
+houba  
+hra  
+hraèka  
+hrana  
+hranolky  
+hrdina  
+hrom  
+hudební nástroj  
+hustota  
+hvìzda  
+hygiena  
+hypotéka  
+informaèní tabule  
+inenır  
+jablonì  
+jaderná elektrárna  
+jahodník  
+jasan  
+jehliènan  
+jeleò  
+jemnost  
+jogurt  
+jogín  
+judo  
+kalendáø  
+kanceláøská idle  
+kapitola  
+kapsa  
+karoserie  
+kavárna  
+kdekoliv  
+keèup  
+kemp  
+keramika  
+knihkupectví  
+koberec  
+kokos  
+kolébka  
+kolobìka  
+kometa  
+kominík  
+komunikace  
+konzerva  
+kopaèky  
+kopretina  
+korektor  
+koupalištì  
+koupel  
+koupelna  
+kousnutí  
+kozaèky  
+krabièka  
+krám  
+kreslení  
+kriket  
+krok  
+kruh  
+kuchaøka  
+kùò  
+kupé  
+kurz  
+kvìtník  
+kyslík  
+lampa  
+lanovka  
+ledovec  
+lehátko  
+lekce  
+letadlo  
+letní tábor  
+lékárna  
+létání  
+listí  
+listopad  
+lízátko  
+loue  
+lukostøelba  
+lump  
+lustry  
+lyování  
+magnet  
+malba  
+malina  
+maminka  
+mapa  
+masér  
+masoravec  
+mìsíc  
+mìstská hromadná doprava  
+míè  
+mikroskop  
+místnost  
+mléèná dráha  
+mobilní telefon  
+moje kniha  
+moøe  
+most  
+motocykl  
+motıl  
+moucha  
+mraky  
+mrkev  
+mráz  
+mıdlo  
+nábytek  
+nadìje  
+nadmoøská vıška  
+náhoda  
+nákupní centrum  
+národní park  
+návštìva  
+nebe  
+nekoneèno  
+nervozita  
+nocleh  
+nùky  
+obleèení  
+obloha  
+obrazovka  
+obuv  
+ocel  
+odpoèinek  
+ofina  
+oko  
+olivy  
+omáèka  
+opona  
+oranerie  
+orchestr  
+osvìení  
+ovoce  
+ozvìna  
+padák  
+palec  
+paluba  
+paprika  
+parkovací dùm  
+pasá  
+peèené brambory  
+pejsek  
+penál  
+pìnkava  
+peprmint  
+pergola  
+pes  
+pianino  
+píseò  
+pistácie  
+píšalka  
+plachetnice  
+plamen  
+plán  
+plavání  
+pletení  
+plyšovı medvídek  
+poèasí  
+podlaha  
+podmínka  
+podzim  
+pohádka  
+pohlednice  
+pokus  
+polštáø  
+pomlázka  
+ponoky  
+popelnice  
+popis  
+pór  
+pošta  
+potápìní  
+pouš  
+povleèení  
+poznámky  
+prádlo  
+prales  
+pravítko  
+prázdniny  
+pravidlo  
+prchlivost  
+prd  
+pøedpovìï poèasí  
+pøekvapení  
+pøesıpací hodiny  
+pøíbor  
+pøíjmení  
+pøíroda  
+pøístav  
+pøedmìt  
+pøeklad  
+pøítel  
+pøiznání  
+pøízrak  
+pudl  
+pyramida  
+rádce  
+radio  
+rajská omáèka  
+raketa  
+ranní rosa  
+rekonstrukce  
+rekreace  
+rekvizita  
+øeka  
+øíjen  
+øízek  
+rodièe  
+rodinnı dùm  
+rohlík  
+rùe  
+rybník  
+sádra  
+sáòky  
+sbor  
+sešit  
+silnice  
+siréna  
+skála  
+sklenice  
+sladkosti  
+slanina  
+sláva  
+slovník  
+slunce  
+slzící cibule  
+smaenice  
+smích  
+smrk  
+sníh  
+snídanì  
+socha  
+spánek  
+spisovatel  
+sportovní stadion  
+sprchovı kout  
+stan  
+staroitnost  
+steak  
+strom  
+struna  
+studna  
+sud  
+sùl  
+surovina  
+svatební dort  
+svetr  
+svíèka  
+svìtlo  
+svítání  
+syreèek  
+šachovnice  
+šála  
+šampón  
+šicí stroj  
+šipka  
+škála  
+škoda  
+školka  
+školní batoh  
+špagety  
+špenát  
+šroub  
+šumìní moøe  
+tajemství  
+taneènice  
+taška  
+teèka  
+telefonní budka  
+tiskárna  
+tma  
+toaleta  
+toèená zmrzlina  
+topení  
+toulky  
+traktor  
+tramvaj  
+tráva  
+tøešeò  
+trh  
+trojúhelník  
+trouba  
+tulipán  
+turistika  
+tuka  
+tvaroh  
+tıden  
+ubrus  
+uèebnice  
+ucho  
+ulice  
+umìní  
+upír  
+usmìvavı oblièej  
+utìrka  
+uovka  
+vajíèko  
+vánoèní cukroví  
+varhany  
+vedro  
+vejce  
+veselá nálada  
+vesmír  
+vìdro  
+vìšák  
+víkend  
+vila  
+vinaøství  
+vítr  
+vlak  
+vlakové nádraí  
+voda  
+vodopád  
+vodovodní kohoutek  
+volant  
+vıhled  
+vılet  
+vyuèování  
+vıchod slunce  
+vzduch  
+záchod  
+zámek  
+zápisník  
+zahrada  
+zajíc  
+zákusek  
+zámek na dveøe  
+zásuvka  
+zavazadlo  
+zázrak  
+zebra  
+zeï  
+zimní bunda  
+zimní èepice  
+zima  
+znamení zvìrokruhu  
+zmrzlina  
+zrcadlo  
+zrnko písku  
+zub  
+ába  
+aludek  
+árovka  
+idle  
+ilka  
+ivá hudba
+brambory  
+bratr  
+brıle  
+bunda  
+bydlení  
+cesta  
+cukroví  
+èepice  
+èervená  
+ètvrtek  
+danì  
+dìdeèek  
+dítì  
+dovolená  
+dùm  
+dusík  
+dvùr  
+dus  
+hasièi  
+hasièská stanice  
+hodinky  
+hory  
+hrách  
+hraèka  
+hranice  
+hrášek  
+høebík  
+høištì  
+hudba  
+hùlka  
+internet  
+jablko  
+jahoda  
+jaro  
+jazyk  
+jehlièí  
+jezero  
+jídlo  
+kanceláø  
+kapr  
+karamel  
+karta  
+kbelík  
+klavír  
+klíè  
+knihovna  
+knoflík  
+koèárek  
+kolo  
+koláè  
+konec  
+koupelna  
+koza  
+krabice  
+krajina  
+kravata  
+kresba  
+krtek  
+kuchaø  
+kùe  
+kultura  
+láhev  
+lednièka  
+list  
+listopad  
+lízátko  
+lokomotiva  
+lopata  
+loutka  
+líce  
+maminka  
+mapa  
+mìsíc  
+mìsto  
+mikrovlnka  
+mléko  
+mobil  
+moøe  
+mouka  
+moucha  
+mravenec  
+mıdlo  
+nábytek  
+nákladní auto  
+nákup  
+nápoj  
+nebe  
+noc  
+nù  
+obìd  
+obchod  
+obleèení  
+obloha  
+obrázek  
+odpad  
+okno  
+ovoce  
+palaèinka  
+papír  
+park  
+peníze  
+pìšinka  
+písmeno  
+plá
+autobus  
+babièka  
+banán  
+bìh  
+benzín  
+bouøka  
+buchta  
+cibule  
+cukr  
+èesnek  
+èokoláda  
+dálnice  
+Francie  
+hodina  
+hruška  
+husa  
+chùze  
+Itálie  
+ještìrka  
+kachna  
+Kanada  
+káva  
+kniha  
+koèka  
+kohout  
+kráva  
+kvìtina  
+lampa  
+láska  
+led  
+lednice  
+liška  
+loï  
+louka  
+máma  
+manelka  
+minuta  
+motorka  
+mrak  
+mrkev  
+nafta  
+nervozita  
+okurka  
+Olomouc  
+Ostrava  
+ovce  
+peøina  
+Plzeò  
+polévka  
+postel  
+Praha  
+pramen  
+rodina  
+rok  
+ruèník  
+ryba  
+rıe  
+øeka  
+salám  
+sekunda  
+sestra  
+sestøenice  
+silnice  
+skála  
+skøíò  
+slepièka  
+sova  
+sprcha  
+strach  
+strom  
+škola  
+šunka  
+telefon  
+televize  
+teta  
+tchynì  
+tramvaj  
+tráva  
+trouba  
+údiv  
+vana  
+veverka  
+vlak  
+vlk  
+voda  
+záchod  
+idle
