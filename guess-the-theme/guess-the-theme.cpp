@@ -28,6 +28,8 @@ struct Record {
 };
 
 void promichaniPoradi(string SlovaNezamichana[10], bool Sloty[10], string SlavaZamichana[10]);
+void vypsaniPromichanychSlov(string SlovaZamichana[10]);
+void uvodnitext();
 
 int main()
 {
@@ -36,7 +38,13 @@ int main()
 
 
     bool volneSlotyProPromichani[10] = { false, false, false, false, false, false, false, false, false, false};
+    
+
+    bool hratelnost = true;
     int zivoty = 3;
+    int vyber = 0;
+
+
     string ZamichanaSlova[10] = {};
     string NezamichanaSlova[10] = {};
 
@@ -48,21 +56,21 @@ int main()
     sqlite3_stmt* stmt;
     Record slova;
 
-    // Otevøení databáze
+    // OtevÅ™enÃ­ databÃ¡ze
     if (sqlite3_open("guess-the-theme.db", &db) != SQLITE_OK) {
-        std::cerr << "Chyba pøi otevírání databáze: " << sqlite3_errmsg(db) << std::endl;
-        return 1;
+        std::cerr << "Chyba pÅ™i otevÃ­rÃ¡nÃ­ databÃ¡ze: " << sqlite3_errmsg(db) << std::endl;
+        return -100;
     }
 
-    //  Dotaz pro 1 náhodný øádek z tabulky themes
+    //  Dotaz pro 1 nÃ¡hodnÃ½ Å™Ã¡dek z tabulky themes
     const char* sql_theme = "SELECT theme, souv1, souv2, souv3, souv4, souv5 FROM themes ORDER BY RANDOM() LIMIT 1;";
     if (sqlite3_prepare_v2(db, sql_theme, -1, &stmt, nullptr) != SQLITE_OK) {
-        std::cerr << "Chyba pøi pøípravì dotazu (themes): " << sqlite3_errmsg(db) << std::endl;
+        std::cerr << "Chyba pÅ™i pÅ™Ã­pravÄ› dotazu (themes): " << sqlite3_errmsg(db) << std::endl;
         sqlite3_close(db);
-        return 1;
+        return -101;
     }
 
-    // Naètení jednoho øádku z themes
+    // NaÄtenÃ­ jednoho Å™Ã¡dku z themes
     if (sqlite3_step(stmt) == SQLITE_ROW) {
         slova.theme = reinterpret_cast<const char*>(sqlite3_column_text(stmt, 0));
         slova.souv1 = reinterpret_cast<const char*>(sqlite3_column_text(stmt, 1));
@@ -71,7 +79,7 @@ int main()
         slova.souv4 = reinterpret_cast<const char*>(sqlite3_column_text(stmt, 4));
         slova.souv5 = reinterpret_cast<const char*>(sqlite3_column_text(stmt, 5));
 
-        std::cout << "Náhodný záznam z themes:\n";
+        std::cout << "NÃ¡hodnÃ½ zÃ¡znam z themes:\n";
         std::cout << "Theme: " << slova.theme << std::endl;
         std::cout << "Souv1: " << slova.souv1 << std::endl;
         std::cout << "Souv2: " << slova.souv2 << std::endl;
@@ -90,21 +98,21 @@ int main()
        
     }
     else {
-        std::cerr << "Tabulka themes je prázdná nebo nelze èíst data.\n";
+        std::cerr << "Tabulka themes je prÃ¡zdnÃ¡ nebo nelze ÄÃ­st data.\n";
     }
 
-    // Uvolnìní pøedchozího dotazu
+    // UvolnÄ›nÃ­ pÅ™edchozÃ­ho dotazu
     sqlite3_finalize(stmt);
 
-    //  Dotaz pro 5 náhodných slov z tabulky nesouvisejici-slova
+    //  Dotaz pro 5 nÃ¡hodnÃ½ch slov z tabulky nesouvisejici-slova
     const char* sql_slova = "SELECT slovo FROM nesouvisejici_slova ORDER BY RANDOM() LIMIT 5;";
     if (sqlite3_prepare_v2(db, sql_slova, -1, &stmt, nullptr) != SQLITE_OK) {
-        std::cerr << "Chyba pøi pøípravì dotazu (nesouvisejici_slova): " << sqlite3_errmsg(db) << std::endl;
+        std::cerr << "Chyba pÅ™i pÅ™Ã­pravÄ› dotazu (nesouvisejici_slova): " << sqlite3_errmsg(db) << std::endl;
         sqlite3_close(db);
-        return 1;
+        return -102;
     }
 
-    std::cout << "\n5 náhodných nesouvisejících slov:\n";
+    std::cout << "\n5 nÃ¡hodnÃ½ch nesouvisejÃ­cÃ­ch slov:\n";
     int count = 0;
     while (sqlite3_step(stmt) == SQLITE_ROW) {
         std::string slovo = reinterpret_cast<const char*>(sqlite3_column_text(stmt, 0));
@@ -114,7 +122,7 @@ int main()
         std::cout << count++ + 1  << ". " << slovo << std::endl;
     }
 
-    // Uvolnìní a uzavøení
+    // UvolnÄ›nÃ­ a uzavÅ™enÃ­
     sqlite3_finalize(stmt);
     sqlite3_close(db);
    
@@ -122,15 +130,35 @@ int main()
 
 
     promichaniPoradi(NezamichanaSlova, volneSlotyProPromichani, ZamichanaSlova);
-    cout << std::endl;
+    uvodnitext();
+    cout << std::endl << std::endl;
+    system("pause");
 
-    for (int i = 0; i < 10; i++)
+    while (hratelnost == true)
     {
-         
-        cout << i+1 << ". " << ZamichanaSlova[i] << std::endl;
+
+        if (zivoty <= 0)
+        {
+            system("cls");
+            cout << "Hra skoncila. Prohral jsi zkus to znovu.";
+            hratelnost = false;
+            return -1;
+        }
+
+        system("cls");
+        vypsaniPromichanychSlov(ZamichanaSlova);
+        cout << std::endl << "Zadejte cislo 1-10 pro zvoleni cisla: ";
+        cin >> vyber;  
+
+        if (vyber <= 0 || vyber >= 11)
+        {
+            cout << "Zadal jsi neplatnou hodnotu\n\n";
+            system("pause");
+            continue;
+        }
+
 
     }
-
 
 
     return 0;
@@ -138,22 +166,84 @@ int main()
 
 
 void promichaniPoradi(string SlovaNezamichana[10], bool Sloty[10], string SlovaZamichana[10]) {
-    // Nejprve nastavíme všechny sloty jako volné
+    // Nejprve nastavÃ­me vÅ¡echny sloty jako volnÃ©
     for (int i = 0; i < 10; i++) {
         Sloty[i] = false;
     }
 
-    // Pro každé slovo z pùvodního pole najdeme náhodnou volnou pozici
+    // Pro kaÅ¾dÃ© slovo z pÅ¯vodnÃ­ho pole najdeme nÃ¡hodnou volnou pozici
     for (int i = 0; i < 10; i++) {
         int nahodnaPozice;
 
-        // Hledáme náhodnou volnou pozici
+        // HledÃ¡me nÃ¡hodnou volnou pozici
         do {
-            nahodnaPozice = rand() % 10; // Generuje èíslo 0-9
-        } while (Sloty[nahodnaPozice] == true); // Opakujeme, dokud nenajdeme volný slot
+            nahodnaPozice = rand() % 10; // Generuje ÄÃ­slo 0-9
+        } while (Sloty[nahodnaPozice] == true); // Opakujeme, dokud nenajdeme volnÃ½ slot
 
-        // Umístíme slovo na náhodnou pozici a oznaèíme slot jako obsazený
+        // UmÃ­stÃ­me slovo na nÃ¡hodnou pozici a oznaÄÃ­me slot jako obsazenÃ½
         SlovaZamichana[nahodnaPozice] = SlovaNezamichana[i];
         Sloty[nahodnaPozice] = true;
     }
+    /* cout << std::endl;
+    for (int i = 0; i < 10; i++)
+    {
+
+        cout << i + 1 << ". " << SlovaZamichana[i] << std::endl;
+
+    }   Pro kontrolu zda se vsechna slova promichala spravne */
 }
+
+void vypsaniPromichanychSlov(string SlovaZamichana[10]) {
+
+    cout << std::endl;
+    for (int i = 0; i < 10; i++)
+    {
+
+        cout << i + 1 << ". " << SlovaZamichana[i] << std::endl;
+
+    }
+
+
+}
+
+void uvodnitext() {
+
+    std::cout <<
+        " _____                       _____ _            _____ _                         \n"
+        "|  __ \\                     |_   _| |          |_   _| |                        \n"
+        "| |  \\/_   _  ___  ___ ___    | | | |__   ___    | | | |__   ___ _ __ ___   ___ \n"
+        "| | __| | | |/ _ \\/ __/ __|   | | | '_ \\ / _ \\   | | | '_ \\ / _ \\ '_ ` _ \\ / _ \\\n"
+        "| |_\\ \\ |_| |  __/\\__ \\__ \\   | | | | | |  __/   | | | | | |  __/ | | | | |  __/\n"
+        " \\____/\\__,_|\\___||___/___/   \\_/ |_| |_|\\___|   \\_/ |_| |_|\\___|_| |_| |_|\\___|\n"
+        "                                                                                \n"
+        "                                                                                \n";
+
+
+    cout << "Pravidla/informace ke hÅ™e: " << std::endl << std::endl;
+
+    cout << "1) NejdÅ™Ã­ve se objevÃ­ 10 slov. 5 slov splu souvÃ­sÃ­ a 5 ne.\n";
+    cout << "2) Ãškolem pro vÃ½hru je odhralit vÅ¡echny nesouvisejÃ­cÃ­ slova.\n";
+    cout << "3) Pokud vyberete souvisejÃ­cÃ­ slovo, Odebere se vÃ¡m 1 Å¾ivot.\n";
+    cout << "4) HrÃ¡Ä mÃ¡ celkem 3 Å¾ivoty, pokud pÅ™Ã­jde o vÅ¡chny, prohraje a hra se ukonÄÃ­.\n";
+
+}
+
+
+
+
+/*              NAVRATOVE HODNOTY
+
+(-100) - Nepodarilo se otevrit Databazy
+(-101) - Chyba pÅ™i pÅ™Ã­pravÄ› dotazu (themes)
+(-102) - Chyba pÅ™i pÅ™Ã­pravÄ› dotazu (nesouvisejici_slova)
+
+
+ (-1) - Nedostatek zivotu
+ (0) - Hra skoncila uspesne
+
+
+
+
+
+
+*/
