@@ -27,8 +27,9 @@ struct Record {
     std::string nesouv5;
 };
 
-void promichaniPoradi(string SlovaNezamichana[10], bool Sloty[10], string SlavaZamichana[10]);
-void vypsaniPromichanychSlov(string SlovaZamichana[10]);
+void nastavBarvu(int barva);
+void promichaniPoradi(string SlovaNezamichana[10], bool Sloty[10], string SlavaZamichana[10], bool SouvisejiciNeboNesouvisejici[10]);
+void vypsaniPromichanychSlov(string SlovaZamichana[10], int zivoty, char barvyAFonty[10]);
 void uvodnitext();
 
 int main()
@@ -37,8 +38,12 @@ int main()
     srand(NULL);
 
 
-    bool volneSlotyProPromichani[10] = { false, false, false, false, false, false, false, false, false, false};
-    
+    bool volneSlotyProPromichani[10];
+    bool SouvisejiciNeboNesouvisejici[10];
+    char barvyAFonty[10];
+    // P - proškrtnuto
+    // C - Červeně
+
 
     bool hratelnost = true;
     int zivoty = 3;
@@ -129,7 +134,7 @@ int main()
 
 
 
-    promichaniPoradi(NezamichanaSlova, volneSlotyProPromichani, ZamichanaSlova);
+    promichaniPoradi(NezamichanaSlova, volneSlotyProPromichani, ZamichanaSlova, SouvisejiciNeboNesouvisejici);
     uvodnitext();
     cout << std::endl << std::endl;
     system("pause");
@@ -146,9 +151,10 @@ int main()
         }
 
         system("cls");
-        vypsaniPromichanychSlov(ZamichanaSlova);
+        vypsaniPromichanychSlov(ZamichanaSlova, zivoty, barvyAFonty);
         cout << std::endl << "Zadejte cislo 1-10 pro zvoleni cisla: ";
         cin >> vyber;  
+        cin.clear();
 
         if (vyber <= 0 || vyber >= 11)
         {
@@ -156,7 +162,16 @@ int main()
             system("pause");
             continue;
         }
-
+         
+        if (SouvisejiciNeboNesouvisejici[vyber - 1] == true)
+        {
+            barvyAFonty[vyber - 1] = 'C';
+        }
+        else
+        {
+            barvyAFonty[vyber - 1] = 'P';
+            zivoty--;
+        }
 
     }
 
@@ -165,7 +180,7 @@ int main()
 }
 
 
-void promichaniPoradi(string SlovaNezamichana[10], bool Sloty[10], string SlovaZamichana[10]) {
+void promichaniPoradi(string SlovaNezamichana[10], bool Sloty[10], string SlovaZamichana[10], bool SouvisejiciNeboNesouvisejici[10]) {
     // Nejprve nastavíme všechny sloty jako volné
     for (int i = 0; i < 10; i++) {
         Sloty[i] = false;
@@ -183,27 +198,74 @@ void promichaniPoradi(string SlovaNezamichana[10], bool Sloty[10], string SlovaZ
         // Umístíme slovo na náhodnou pozici a označíme slot jako obsazený
         SlovaZamichana[nahodnaPozice] = SlovaNezamichana[i];
         Sloty[nahodnaPozice] = true;
+
+        if (i < 5)
+        {
+            SouvisejiciNeboNesouvisejici[nahodnaPozice] = true;
+        }
+        else
+        {
+            SouvisejiciNeboNesouvisejici[nahodnaPozice] = false;
+        }
     }
-    /* cout << std::endl;
-    for (int i = 0; i < 10; i++)
-    {
 
-        cout << i + 1 << ". " << SlovaZamichana[i] << std::endl;
-
-    }   Pro kontrolu zda se vsechna slova promichala spravne */
 }
 
-void vypsaniPromichanychSlov(string SlovaZamichana[10]) {
+void vypsaniPromichanychSlov(string SlovaZamichana[10], int zivoty, char barvyAFonty[10]) {
 
     cout << std::endl;
+    
+
     for (int i = 0; i < 10; i++)
     {
+                    
+        
+        if (barvyAFonty[i] == 'C')
+        {
+            nastavBarvu(10); //svetle zelena
+            cout << i + 1 << ". " << SlovaZamichana[i];
+            nastavBarvu(7); //bila
 
-        cout << i + 1 << ". " << SlovaZamichana[i] << std::endl;
 
+        }
+        else if (barvyAFonty[i] == 'P')
+        {
+            cout << i + 1 << ". " << "\033[9m" << SlovaZamichana[i] << "\033[0m";
+            
+            // \033[9m = zapnutí přeškrtnutí
+            // \033[0m = reset formátování
+
+        }
+        else
+        {
+            cout << i + 1 << ". " << SlovaZamichana[i];
+
+
+        }
+        
+        if (i == 0)
+        {
+            cout << "                               " << "Životy: "; 
+            nastavBarvu(4); //cervena
+            cout << zivoty << std::endl;
+            nastavBarvu(7); // bila
+            continue;
+        }
+        else
+        {
+            cout << std::endl;
+        }
+        
     }
 
 
+}
+
+void nastavBarvu(int barva) {
+    // Získáme handle pro konzoli
+    HANDLE hConsole = GetStdHandle(STD_OUTPUT_HANDLE);
+    // Nastavíme barvu
+    SetConsoleTextAttribute(hConsole, barva);
 }
 
 void uvodnitext() {
@@ -240,10 +302,6 @@ void uvodnitext() {
 
  (-1) - Nedostatek zivotu
  (0) - Hra skoncila uspesne
-
-
-
-
 
 
 */
