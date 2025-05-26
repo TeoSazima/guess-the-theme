@@ -10,6 +10,7 @@
 
 
 using namespace std;
+using std::cout;
 
 struct Record {
     std::string theme;
@@ -31,18 +32,20 @@ void nastavBarvu(int barva);
 void promichaniPoradi(string SlovaNezamichana[10], bool Sloty[10], string SlavaZamichana[10], bool SouvisejiciNeboNesouvisejici[10]);
 void vypsaniPromichanychSlov(string SlovaZamichana[10], int zivoty, char barvyAFonty[10]);
 void uvodnitext();
+bool kontrolaKonce(char PocetUhadnutychSlov[10]);
 
 int main()
 {
 
     srand(NULL);
 
+    bool debug = false;
 
     bool volneSlotyProPromichani[10];
     bool SouvisejiciNeboNesouvisejici[10];
-    char barvyAFonty[10];
+    char BarvyAFonty[10];
     // P - proškrtnuto
-    // C - Červeně
+    // Z - Červeně
 
 
     bool hratelnost = true;
@@ -84,13 +87,18 @@ int main()
         slova.souv4 = reinterpret_cast<const char*>(sqlite3_column_text(stmt, 4));
         slova.souv5 = reinterpret_cast<const char*>(sqlite3_column_text(stmt, 5));
 
-        std::cout << "Náhodný záznam z themes:\n";
-        std::cout << "Theme: " << slova.theme << std::endl;
-        std::cout << "Souv1: " << slova.souv1 << std::endl;
-        std::cout << "Souv2: " << slova.souv2 << std::endl;
-        std::cout << "Souv3: " << slova.souv3 << std::endl;
-        std::cout << "Souv4: " << slova.souv4 << std::endl;
-        std::cout << "Souv5: " << slova.souv5 << std::endl;
+        if (debug == true)
+        {
+            std::cout << "Náhodný záznam z themes:\n";
+            std::cout << "Theme: " << slova.theme << std::endl;
+            std::cout << "Souv1: " << slova.souv1 << std::endl;
+            std::cout << "Souv2: " << slova.souv2 << std::endl;
+            std::cout << "Souv3: " << slova.souv3 << std::endl;
+            std::cout << "Souv4: " << slova.souv4 << std::endl;
+            std::cout << "Souv5: " << slova.souv5 << std::endl;
+
+            std::cout << "\n5 náhodných nesouvisejících slov:\n";
+        } 
 
       
         
@@ -117,14 +125,16 @@ int main()
         return -102;
     }
 
-    std::cout << "\n5 náhodných nesouvisejících slov:\n";
-    int count = 0;
+    int index = 5;
     while (sqlite3_step(stmt) == SQLITE_ROW) {
         std::string slovo = reinterpret_cast<const char*>(sqlite3_column_text(stmt, 0));
         
-        NezamichanaSlova[count + 5] = slovo;
+        NezamichanaSlova[index++] = slovo;
+        //index++;
 
-        std::cout << count++ + 1  << ". " << slovo << std::endl;
+            //std::cout << count++ + 1 << ". " << slovo << std::endl;
+
+        
     }
 
     // Uvolnění a uzavření
@@ -151,7 +161,7 @@ int main()
         }
 
         system("cls");
-        vypsaniPromichanychSlov(ZamichanaSlova, zivoty, barvyAFonty);
+        vypsaniPromichanychSlov(ZamichanaSlova, zivoty, BarvyAFonty);
         cout << std::endl << "Zadejte cislo 1-10 pro zvoleni cisla: ";
         cin >> vyber;  
         cin.clear();
@@ -165,12 +175,31 @@ int main()
          
         if (SouvisejiciNeboNesouvisejici[vyber - 1] == true)
         {
-            barvyAFonty[vyber - 1] = 'C';
+            BarvyAFonty[vyber - 1] = 'Z';
         }
         else
         {
-            barvyAFonty[vyber - 1] = 'P';
+            BarvyAFonty[vyber - 1] = 'P';
             zivoty--;
+        }
+
+        if (kontrolaKonce(BarvyAFonty))
+        {
+
+            system("cls");
+            vypsaniPromichanychSlov(ZamichanaSlova, zivoty, BarvyAFonty);
+
+
+            system("pause");
+            system("cls");
+            cout << "+-------------------------------------------------------------------------+\n";
+            cout << "Gratuluji, uspěšně jsi dokončil tuto hru.\n";
+            cout << "Téma bylo: " << slova.theme << std::endl << std::endl;
+
+            cout << "A související slova byla: " << slova.souv1 << ", " << slova.souv2 << ", " << slova.souv3 << ", " << slova.souv4 << ", " << slova.souv5;
+
+            cout << "\n\n+-------------------------------------------------------------------------+\n\n";
+            return(0);
         }
 
     }
@@ -220,7 +249,7 @@ void vypsaniPromichanychSlov(string SlovaZamichana[10], int zivoty, char barvyAF
     {
                     
         
-        if (barvyAFonty[i] == 'C')
+        if (barvyAFonty[i] == 'Z')
         {
             nastavBarvu(10); //svetle zelena
             cout << i + 1 << ". " << SlovaZamichana[i];
@@ -284,12 +313,36 @@ void uvodnitext() {
     cout << "Pravidla/informace ke hře: " << std::endl << std::endl;
 
     cout << "1) Nejdříve se objeví 10 slov. 5 slov splu souvísí a 5 ne.\n";
-    cout << "2) Úkolem pro výhru je odhralit všechny nesouvisející slova.\n";
-    cout << "3) Pokud vyberete související slovo, Odebere se vám 1 život.\n";
-    cout << "4) Hráč má celkem 3 životy, pokud příjde o všchny, prohraje a hra se ukončí.\n";
+    cout << "2) Úkolem pro výhru je odhralit všechny související slova.\n";
+    cout << "3) Chceme-li vybrat slovo, u kterého se domníváme že je související, zadáme číslo reprezentující toto slovo.\n";
+    cout << "4) Pokud vyberete související slovo, Odebere se vám 1 život.\n";
+    cout << "5) Hráč má celkem 3 životy, pokud příjde o všchny, prohraje a hra se ukončí.\n";
 
 }
 
+
+bool kontrolaKonce(char PocetUhadnutychSlov[10]) {
+
+
+    int counter = 0;
+    for (int i = 0; i < 10; i++)
+    {
+        if (PocetUhadnutychSlov[i] == 'Z') // Pokud je slovo oznaceno zelenou barvou, znamena to ze bylo odhaleno spravne
+        {
+            counter++;
+        }
+
+    }
+
+    if (counter >= 5)
+    {
+        return true;
+    }
+    else
+    {
+        return false;
+    }
+}
 
 
 
