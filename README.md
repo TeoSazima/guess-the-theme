@@ -66,3 +66,69 @@ This program was created as a demonstration project for practicing:
 
 If you have any questions or feedback, feel free to contact me.
 
+
+
+
+# Hádej Téma
+
+### 🎮 Konzolová slovní hra v C++ s SQLite
+
+---
+
+## 📝 Popis
+
+**Hádej Téma** je konzolová hra v češtině napsaná v C++.  
+Cílem je uhodnout 5 slov, která souvisejí s ukrytým tématem, z celkových 10 zamíchaných slov.  
+Pět slov je tematicky propojených a pět je náhodně vybraných nesouvisejících slov.
+
+Hráč má **tři životy** a musí se vyhnout vybírání nesouvisejících slov.
+
+---
+
+## 🕹️ Pravidla
+
+- Na začátku hry je zobrazena 10 zamíchaných slov.  
+- 5 z nich souvisí s ukrytým tématem (např. „Velké kočky“).  
+- 5 ostatních jsou zcela nesouvisející.  
+- Hráč vybírá slova zadáním čísla (1–10).  
+- Pokud je vybrané slovo související, zobrazí se zeleně.  
+- Pokud je nesouvisející, slovo se přeškrtne a hráč přijde o jeden život.  
+- Hráč **vyhraje**, když správně označí všech 5 souvisejících slov.  
+- Hráč **prohraje** po 3 chybných výběrech.
+
+---
+
+## ⚙️ Instalace a spuštění
+
+1. Naklonujte repozitář nebo stáhněte soubory `main.cpp` a `guess-the-theme.db`.  
+2. Otevřete terminál a přeložte projekt:  
+   ```sh
+   g++ -o guess-theme main.cpp -lsqlite3
+
+### Struktura kódu
+
+- **main()**  
+  Hlavní herní smyčka; zpracovává vstup od uživatele, výstup a herní logiku.
+
+- **promichaniPoradi()**  
+  Zamíchá pořadí slov a přiřadí značky, zda jsou slova související nebo nesouvisející.
+
+- **vypsaniPromichanychSlov()**  
+  Zobrazí zamíchaný seznam slov s barevným označením a formátováním podle odhadů hráče.
+
+- **uvodnitext()**  
+  Vypíše úvodní text a pravidla hry.
+
+- **kontrolaKonce()**  
+  Zkontroluje, zda byla správně uhodnuta všechna související slova.
+
+---
+
+### Autor
+
+Tento program byl vytvořen jako demonstrační projekt pro procvičení:
+
+- Práce s konzolovým vstupem a výstupem v C++
+- Integrace s databází SQLite
+- Základní návrh a implementaci herní logiky
+
