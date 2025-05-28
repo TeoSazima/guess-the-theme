@@ -58,7 +58,9 @@ int main()
 
 
     SetConsoleOutputCP(CP_UTF8);
-    setlocale(LC_CTYPE, "");
+    //setlocale(LC_CTYPE, "CZ");
+    char* loc = setlocale(LC_CTYPE, "cs_CZ.UTF-8");
+
 
     sqlite3* db;
     sqlite3_stmt* stmt;
