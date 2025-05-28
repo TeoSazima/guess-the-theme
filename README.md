@@ -33,3 +33,36 @@ The player has **three lives** and must avoid selecting unrelated words.
 2. Open a terminal and compile the project:
    ```sh
    g++ -o guess-theme main.cpp -lsqlite3
+
+
+   
+---
+
+### Code Structure
+
+- **main()**  
+  Main game loop; handles user input, output, and game logic.
+
+- **promichaniPoradi()**  
+  Shuffles the order of words and assigns related/unrelated flags.
+
+- **vypsaniPromichanychSlov()**  
+  Displays the shuffled word list with colors and formatting indicating guesses.
+
+- **uvodnitext()**  
+  Prints the introductory text and game rules.
+
+- **kontrolaKonce()**  
+  Checks if all related words have been correctly guessed.
+
+---
+
+### Author
+
+This program was created as a demonstration project for practicing:  
+- Console input/output handling in C++  
+- Integration with SQLite database  
+- Basic game design and logic implementation  
+
+If you have any questions or feedback, feel free to contact me.
+
